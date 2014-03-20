@@ -1,3 +1,4 @@
 class Purchaser < ActiveRecord::Base
-  has_and_belongs_to_many :items
+  has_many :items_purchasers
+  has_many :items, through: :items_purchasers
 end

@@ -1,0 +1,66 @@
+h1 Things in the database
+
+table
+  caption Purchaser
+  thead
+    tr
+      td ID
+      td Name
+  tbody
+    - @purchasers.each do |purchaser|
+      tr
+        td = purchaser.id
+        td = purchaser.name
+br
+
+table
+  caption Merchant
+  thead
+    tr
+      td ID
+      td Name
+      td Address
+  tbody
+    - @merchants.each do |merchant|
+      tr
+        td = merchant.id
+        td = merchant.name
+        td = merchant.address
+br
+
+table
+  caption Items
+  thead
+    tr
+      td ID
+      td Description
+      td Price
+      td Merchant ID
+      td Merchant
+  tbody
+    - @items.each do |item|
+      tr
+        td = item.id
+        td = item.description
+        td = number_to_currency item.price / 100.0
+        td = item.merchant_id
+        td = item.merchant.name
+br
+
+table
+  caption ItemsPurchaser
+  thead
+    tr
+      td Item ID
+      td Item Description
+      td Purchase ID
+      td Purchaser Name
+      td Count
+  tbody
+    - @items_purchasers.each do |items_purchaser|
+      tr
+        td = items_purchaser.item_id
+        td = items_purchaser.item.description
+        td = items_purchaser.purchaser_id
+        td = items_purchaser.purchaser.name
+        td = items_purchaser.count

@@ -1,6 +1,6 @@
 TabReader::Application.routes.draw do
 
-  resources :files, only: [:new, :create]
+  resources :files, only: [:new, :create, :index]
 
   root to: 'files#new'
   # The priority is based upon order of creation: first created -> highest priority.

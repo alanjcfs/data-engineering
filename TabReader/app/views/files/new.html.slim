@@ -1,6 +1,6 @@
 h1 Upload
 
-= form_tag( {action: 'create', controller: 'files'}, {} ) do
+= form_tag( {action: 'create', controller: 'files'}, {multipart: true} ) do
   = file_field_tag :file
   br
   = submit_tag 'Submit'

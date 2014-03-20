@@ -11,11 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140320195140) do
+ActiveRecord::Schema.define(version: 20140320200115) do
 
   create_table "items", force: true do |t|
     t.integer  "price"
     t.text     "description"
+    t.integer  "merchant_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "items", ["merchant_id"], name: "index_items_on_merchant_id"
+
+  create_table "merchants", force: true do |t|
+    t.string   "address"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
